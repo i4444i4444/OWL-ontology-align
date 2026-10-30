@@ -429,9 +429,13 @@ ex:hasTextFragment a owl:ObjectProperty ;
     schema:inDefinedTermSet id:topics ;
     schema:name "Truth Value of a Proposition" .
 
-schema:datePublished a owl:DatatypeProperty .
+schema:datePublished a owl:DatatypeProperty ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:string .
 
-schema:description a owl:DatatypeProperty .
+schema:description a owl:DatatypeProperty ;
+    rdfs:domain schema:DefinedTerm ;
+    rdfs:range xsd:string .
 
 schema:exampleOfWork a owl:ObjectProperty ;
     rdfs:domain ex:TextFragment,
@@ -443,7 +447,8 @@ schema:inDefinedTermSet a owl:ObjectProperty ;
     rdfs:domain schema:DefinedTerm ;
     rdfs:range schema:DefinedTermSet .
 
-schema:inLanguage a owl:DatatypeProperty .
+schema:inLanguage a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
 
 schema:isPartOf a owl:ObjectProperty ;
     rdfs:domain ex:TextFragment,
@@ -459,11 +464,16 @@ schema:mentions a owl:ObjectProperty ;
         schema:Chapter ;
     rdfs:range schema:DefinedTerm .
 
-schema:name a owl:DatatypeProperty .
+schema:name a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
 
-schema:position a owl:DatatypeProperty .
+schema:position a owl:DatatypeProperty ;
+    rdfs:domain ex:Thesis ;
+    rdfs:range xsd:integer .
 
-schema:text a owl:DatatypeProperty .
+schema:text a owl:DatatypeProperty ;
+    rdfs:domain ex:TextFragment ;
+    rdfs:range xsd:string .
 
 schema:translationOfWork a owl:ObjectProperty ;
     rdfs:domain schema:Book ;
@@ -17262,8 +17272,6 @@ ex:Author a owl:Class .
     schema:name "6.23" ;
     schema:position 465 .
 
-schema:Book a owl:Class .
-
 <http://wittgensteiniana.michelepasin.org/id/topic/analysis-of-a-proposition-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "Frege and Russell recognized that the subject-predicate form of grammar masks the underlying logical form of a proposition. Consequently, they analyzed sentences in order to reduce them into sets of functions and variable placeholders, making possible things such as quantifier logic. Wittgenstein shares the view that ordinary language masks the real logical structure it has, so he too advocates the usage of analysis for breaking down complex propositions into simple one. However, he also rejects several other solutions proposed by Russell and Frege (like the Theory of types, or the existence of logical objects) by proposing his pictorial theory of language and meaning." ;
     schema:inDefinedTermSet id:topics ;
@@ -17374,6 +17382,8 @@ schema:Book a owl:Class .
         <http://wittgensteiniana.michelepasin.org/id/topic/role-of-logic-by-wittgenstein> ;
     schema:name "6.126" ;
     schema:position 452 .
+
+schema:Book a owl:Class .
 
 <http://wittgensteiniana.michelepasin.org/id/topic/expression-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "Wittgenstein uses the term expression as an alternative of the term symbol: the two terms mean the same thing, that is, what we perceive thanks to the sign [???]." ;
@@ -17901,9 +17911,9 @@ schema:DefinedTerm a owl:Class .
     schema:name "Tractatus Logico-Philosophicus (tr. Pears & McGuinness)" ;
     schema:translationOfWork id:tractatus .
 
-ex:Thesis a owl:Class .
-
 schema:Chapter a owl:Class .
+
+ex:Thesis a owl:Class .
 
 id:tractatus a schema:Book ;
     ex:hasAuthor <http://example.org/philosurfical/author/Ludwig_Wittgenstein> ;
@@ -17911,7 +17921,7 @@ id:tractatus a schema:Book ;
     schema:inLanguage "de" ;
     schema:name "Tractatus Logico-Philosophicus" .
 
-ex:TextFragment a owl:Class .
-
 schema:CreativeWork a owl:Class .
+
+ex:TextFragment a owl:Class .
 

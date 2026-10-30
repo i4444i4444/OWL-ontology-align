@@ -2,8 +2,8 @@ import os
 import re
 import unicodedata
 
-from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, OWL
+from rdflib import Graph, Literal, Namespace, URIRef
+from rdflib.namespace import OWL, RDF, RDFS, XSD
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -150,7 +150,39 @@ for property_uri in object_properties:
                     RDFS.range,
                     class_uri
                 ))
-            
+
+datatype_properties = list(
+    graph.subjects(RDF.type, OWL.DatatypeProperty)
+)
+
+for property_uri in datatype_properties:
+    values = list(graph.objects(None, property_uri))
+
+    if not values:
+        continue
+
+    if all(
+        isinstance(value, Literal)
+        and value.datatype == XSD.integer
+        for value in values
+    ):
+        graph.add((
+            property_uri,
+            RDFS.range,
+            XSD.integer
+        ))
+    else:
+        graph.add((
+            property_uri,
+            RDFS.range,
+            XSD.string
+        ))
+
+graph.add((SCHEMA.position, RDFS.domain, EX.Thesis))
+graph.add((SCHEMA.text, RDFS.domain, EX.TextFragment))
+graph.add((SCHEMA.datePublished, RDFS.domain, SCHEMA.Book))
+graph.add((SCHEMA.description, RDFS.domain, SCHEMA.DefinedTerm))
+
 graph.serialize(OUTPUT, format="turtle")
 
 print("done")
