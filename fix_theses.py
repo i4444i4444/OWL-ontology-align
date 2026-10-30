@@ -8,13 +8,26 @@ from rdflib.namespace import RDF, RDFS, OWL
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SOURCE = os.path.join(BASE_DIR, "philosurfical_modified.ttl")
-OUTPUT = os.path.join(BASE_DIR, "philosurfical_final.ttl")
+OUTPUT = os.path.join(
+    BASE_DIR, "tractatus-alignment", "data", "philosurfical_final.ttl"
+)
 
 graph = Graph()
 graph.parse(SOURCE, format="turtle")
 
 SCHEMA = Namespace("https://schema.org/")
 EX = Namespace("http://example.org/philosurfical/")
+
+schema_classes = [
+    SCHEMA.Book,
+    SCHEMA.Chapter,
+    SCHEMA.CreativeWork,
+    SCHEMA.DefinedTerm,
+    SCHEMA.DefinedTermSet
+]
+
+for class_uri in schema_classes:
+    graph.add((class_uri, RDF.type, OWL.Class))
 
 graph.bind("ex", EX)
 
@@ -109,9 +122,9 @@ for subject, predicate, value in author_triples:
 
 graph.serialize(OUTPUT, format="turtle")
 
-print("Готово.")
-print("Тезисов размечено:", thesis_count)
-print("Связей с текстовыми фрагментами:", fragment_count)
-print("Записей об авторах обработано:", len(author_triples))
-print("Всего триплетов:", len(graph))
-print("Файл:", OUTPUT)
+print("done")
+print("Amount of thesises", thesis_count)
+print("properties with text fragments:", fragment_count)
+print("Triples about authors:", len(author_triples))
+print("Total triplets:", len(graph))
+print("file:", OUTPUT)

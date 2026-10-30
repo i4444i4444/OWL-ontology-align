@@ -43,10 +43,10 @@ for predicate, types in predicate_types.items():
 
 graph.serialize(OUTPUT, format="turtle")
 
-print("Файл сохранён:", OUTPUT)
-print("Объектных свойств объявлено:", object_count)
-print("Свойств данных объявлено:", datatype_count)
-print("Предикатов требуют проверки:", len(mixed))
+print("file is installed:", OUTPUT)
+print("object properties:", object_count)
+print("data properties:", datatype_count)
+print("predicates needing checking:", len(mixed))
 
 for predicate in mixed:
     print("Проверить:", predicate)
