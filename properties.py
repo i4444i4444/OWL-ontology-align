@@ -1,6 +1,8 @@
 import os
-from rdflib import Graph, URIRef, Literal, BNode
+from rdflib import Graph, URIRef, Literal, BNode, Namespace
 from rdflib.namespace import RDF, OWL
+
+SCHEMA = Namespace("https://schema.org/")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,6 +16,8 @@ predicate_types = {}
 
 for subject, predicate, obj in graph:
     if predicate == RDF.type:
+        continue
+    if predicate == SCHEMA.author:
         continue
 
     if isinstance(obj, Literal):
@@ -43,10 +47,10 @@ for predicate, types in predicate_types.items():
 
 graph.serialize(OUTPUT, format="turtle")
 
-print("Файл сохранён:", OUTPUT)
-print("Объектных свойств объявлено:", object_count)
-print("Свойств данных объявлено:", datatype_count)
-print("Предикатов требуют проверки:", len(mixed))
+print("file is installed:", OUTPUT)
+print("object properties:", object_count)
+print("data properties:", datatype_count)
+print("predicates needing checking:", len(mixed))
 
 for predicate in mixed:
     print("Проверить:", predicate)

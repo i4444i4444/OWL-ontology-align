@@ -11639,6 +11639,8 @@ which serve no purpose are logically meaningless."""@en .
     schema:inDefinedTermSet id:topics ;
     schema:name "Time" .
 
+schema:DefinedTermSet a owl:Class .
+
 <http://wittgensteiniana.michelepasin.org/id/topic/complex-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "The notion of complex (versus simple) is fundamental in Wittgenstein, and in general, in the logical positivism, because these conceptions attempted to reduce the apparent complexity of reality and language into a combination of simple elements." ;
     schema:inDefinedTermSet id:topics ;
@@ -15691,6 +15693,8 @@ which serve no purpose are logically meaningless."""@en .
     schema:name "6.2331" ;
     schema:position 472 .
 
+schema:Book a owl:Class .
+
 <http://wittgensteiniana.michelepasin.org/id/topic/form-of-representation-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "The form of representation is the 'code' used to express the correspondance between a picture and what the picture represents. For example, says Wittgenstein, between a proposition and a fact the form of representation is given by the logical form, which guarantees the correspondance between the elements of the pictures and the elements of the fact." ;
     schema:inDefinedTermSet id:topics ;
@@ -17861,6 +17865,8 @@ ex:Author a owl:Class .
 id:topics a schema:DefinedTermSet ;
     schema:name "Wittgensteiniana concept classification" .
 
+schema:DefinedTerm a owl:Class .
+
 <http://wittgensteiniana.michelepasin.org/id/expression/ogden> a schema:Book ;
     ex:hasAuthor <http://example.org/philosurfical/author/C_K_Ogden> ;
     schema:datePublished "1922" ;
@@ -17876,6 +17882,8 @@ id:topics a schema:DefinedTermSet ;
     schema:name "Tractatus Logico-Philosophicus (tr. Pears & McGuinness)" ;
     schema:translationOfWork id:tractatus .
 
+schema:Chapter a owl:Class .
+
 ex:Thesis a owl:Class .
 
 id:tractatus a schema:Book ;
@@ -17883,6 +17891,8 @@ id:tractatus a schema:Book ;
     schema:datePublished "1921" ;
     schema:inLanguage "de" ;
     schema:name "Tractatus Logico-Philosophicus" .
+
+schema:CreativeWork a owl:Class .
 
 ex:TextFragment a owl:Class .
 

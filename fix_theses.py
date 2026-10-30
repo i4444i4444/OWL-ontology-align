@@ -1,14 +1,17 @@
+
 import os
 import re
 import unicodedata
 
-from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, OWL
+from rdflib import Graph, Literal, Namespace, URIRef
+from rdflib.namespace import OWL, RDF, RDFS, XSD
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SOURCE = os.path.join(BASE_DIR, "philosurfical_modified.ttl")
-OUTPUT = os.path.join(BASE_DIR, "philosurfical_final.ttl")
+OUTPUT = os.path.join(
+    BASE_DIR, "tractatus-alignment", "data", "philosurfical_final.ttl"
+)
 
 graph = Graph()
 graph.parse(SOURCE, format="turtle")
@@ -17,13 +20,46 @@ SCHEMA = Namespace("https://schema.org/")
 EX = Namespace("http://example.org/philosurfical/")
 
 graph.bind("ex", EX)
+graph.bind("schema", SCHEMA)
 
+schema_classes = [
+    SCHEMA.Book,
+    SCHEMA.Chapter,
+    SCHEMA.CreativeWork,
+    SCHEMA.DefinedTerm,
+    SCHEMA.DefinedTermSet
+]
+
+for class_uri in schema_classes:
+    graph.add((class_uri, RDF.type, OWL.Class))
+
+graph.add((EX.Author, RDF.type, OWL.Class))
 graph.add((EX.Thesis, RDF.type, OWL.Class))
 graph.add((EX.TextFragment, RDF.type, OWL.Class))
 
-graph.add((EX.hasTextFragment, RDF.type, OWL.ObjectProperty))
-graph.add((EX.hasTextFragment, RDFS.domain, EX.Thesis))
-graph.add((EX.hasTextFragment, RDFS.range, EX.TextFragment))
+object_property_constraints = {
+    EX.hasAuthor: (SCHEMA.Book, EX.Author),
+    EX.hasTextFragment: (EX.Thesis, EX.TextFragment),
+    SCHEMA.exampleOfWork: (EX.TextFragment, EX.Thesis),
+    SCHEMA.inDefinedTermSet: (
+        SCHEMA.DefinedTerm,
+        SCHEMA.DefinedTermSet
+    ),
+    SCHEMA.isPartOf: (
+        SCHEMA.CreativeWork,
+        SCHEMA.CreativeWork
+    ),
+    SCHEMA.mentions: (EX.Thesis, SCHEMA.DefinedTerm),
+    SCHEMA.translationOfWork: (SCHEMA.Book, SCHEMA.Book)
+}
+
+for property_uri, (domain_class, range_class) in (
+    object_property_constraints.items()
+):
+    graph.add((property_uri, RDF.type, OWL.ObjectProperty))
+    graph.add((property_uri, RDFS.domain, domain_class))
+    graph.add((property_uri, RDFS.range, range_class))
+
 
 thesis_count = 0
 
@@ -44,6 +80,7 @@ for unit, _, number in list(graph.triples((None, SCHEMA.name, None))):
     graph.add((unit, RDF.type, EX.Thesis))
     thesis_count += 1
 
+
 fragment_count = 0
 
 for fragment, _, unit in list(
@@ -60,10 +97,6 @@ for fragment, _, unit in list(
     graph.add((fragment, RDF.type, EX.TextFragment))
     graph.add((unit, EX.hasTextFragment, fragment))
     fragment_count += 1
-
-graph.add((EX.Author, RDF.type, OWL.Class))
-graph.add((EX.hasAuthor, RDF.type, OWL.ObjectProperty))
-graph.add((EX.hasAuthor, RDFS.range, EX.Author))
 
 
 def make_uri(kind, owner, value):
@@ -107,11 +140,46 @@ for subject, predicate, value in author_triples:
             Literal(author_name)
         ))
 
+
+datatype_properties = list(
+    graph.subjects(RDF.type, OWL.DatatypeProperty)
+)
+
+for property_uri in datatype_properties:
+    values = list(graph.objects(None, property_uri))
+
+    if not values:
+        continue
+
+    if all(
+        isinstance(value, Literal)
+        and value.datatype == XSD.integer
+        for value in values
+    ):
+        graph.add((
+            property_uri,
+            RDFS.range,
+            XSD.integer
+        ))
+    else:
+        graph.add((
+            property_uri,
+            RDFS.range,
+            XSD.string
+        ))
+
+
+graph.add((SCHEMA.position, RDFS.domain, EX.Thesis))
+graph.add((SCHEMA.text, RDFS.domain, EX.TextFragment))
+graph.add((SCHEMA.datePublished, RDFS.domain, SCHEMA.Book))
+graph.add((SCHEMA.description, RDFS.domain, SCHEMA.DefinedTerm))
+
+
 graph.serialize(OUTPUT, format="turtle")
 
-print("Готово.")
-print("Тезисов размечено:", thesis_count)
-print("Связей с текстовыми фрагментами:", fragment_count)
-print("Записей об авторах обработано:", len(author_triples))
-print("Всего триплетов:", len(graph))
-print("Файл:", OUTPUT)
+print("Done")
+print("Theses processed:", thesis_count)
+print("Text fragments processed:", fragment_count)
+print("Author records processed:", len(author_triples))
+print("Total triples:", len(graph))
+print("Output file:", OUTPUT)

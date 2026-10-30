@@ -43,24 +43,24 @@
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/1002> ;
     schema:inLanguage "de" ;
     schema:isPartOf id:tractatus ;
-    schema:text """So lautet der Beweis des Satzes 2×2=4:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x \r
- = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x \r
+    schema:text """So lautet der Beweis des Satzes 2×2=4:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x 
+ = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x 
 = Ω’ Ω’ Ω’ Ω’ x = Ω1+1+1+1’ x = Ω4’ x."""@de .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/1002-ogden> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/1002> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/ogden> ;
-    schema:text """Thus the proof of the proposition 2×2=4 runs:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x \r
- = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x \r
+    schema:text """Thus the proof of the proposition 2×2=4 runs:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x 
+ = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x 
 = Ω’ Ω’ Ω’ Ω’ x = Ω1+1+1+1’ x = Ω4’ x."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/1002-pears> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/1002> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """Thus the proof of the proposition 2×2=4 runs as follows:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x \r
- = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x \r
+    schema:text """Thus the proof of the proposition 2×2=4 runs as follows:   (Ω ν ) μ ’ x = Ω ν × μ ’ x Def. Ω2×2’ x = (Ω2)2’ x = (Ω2)1+1’ x = Ω2’ Ω2’ x 
+ = Ω1+1’ Ω1+1’ x = (Ω’Ω)’ (Ω’Ω)’ x 
 = Ω’ Ω’ Ω’ Ω’ x = Ω1+1+1+1’ x = Ω4’ x."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/1003-german> a schema:CreativeWork ;
@@ -1177,7 +1177,7 @@
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/538> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """It would seem to be a sort of accident, if it turned out that a situation would fit a thing that could already exist entirely on its own. If things can occur in states of affairs, this possibility must\r
+    schema:text """It would seem to be a sort of accident, if it turned out that a situation would fit a thing that could already exist entirely on its own. If things can occur in states of affairs, this possibility must
 be in them from the beginning.  (Nothing in the province of logic can be merely possible. Logic deals with every possibility and all possibilities are its facts.) Just as we are quite unable to imagine spatial objects outside space or temporal objects outside time, so too there is no object that we can imagine excluded from the possibility of combining with others. If I can imagine objects combined in states of affairs, I cannot imagine them excluded from the possibility of such combinations."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/539-german> a schema:CreativeWork ;
@@ -1520,10 +1520,10 @@ be in them from the beginning.  (Nothing in the province of logic can be merely 
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/557> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """Either a thing has properties that nothing else has, in which\r
-case we can immediately use a description to distinguish it from the\r
-others and refer to it; or, on the other hand, there are several things\r
-that have the whole set of their properties in common, in which case it\r
+    schema:text """Either a thing has properties that nothing else has, in which
+case we can immediately use a description to distinguish it from the
+others and refer to it; or, on the other hand, there are several things
+that have the whole set of their properties in common, in which case it
 is quite impossible to indicate one of them. For it there is nothing to distinguish a thing, I cannot distinguish it, since otherwise it would be distinguished after all."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/558-german> a schema:CreativeWork ;
@@ -2370,7 +2370,7 @@ is quite impossible to indicate one of them. For it there is nothing to distingu
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/604> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """A picture represents a possible situation in logical \r
+    schema:text """A picture represents a possible situation in logical 
 space."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/605-german> a schema:CreativeWork ;
@@ -2551,7 +2551,7 @@ space."""@en .
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/614> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """‘A state of affairs is thinkable’: what this means is that we can\r
+    schema:text """‘A state of affairs is thinkable’: what this means is that we can
 picture it to ourselves."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/615-german> a schema:CreativeWork ;
@@ -2726,15 +2726,15 @@ picture it to ourselves."""@en .
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/624> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/ogden> ;
-    schema:text """We use the sensibly perceptible sign (sound or\r
-written sign, etc.) of the proposition as a projection of the possible\r
+    schema:text """We use the sensibly perceptible sign (sound or
+written sign, etc.) of the proposition as a projection of the possible
 state of affairs. The method of projection is the thinking of the sense of the proposition."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/624-pears> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/624> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """We use the perceptible sign of a proposition (spoken or written,\r
+    schema:text """We use the perceptible sign of a proposition (spoken or written,
 etc.) as a projection of a possible situation. The method of projection is to think of the sense of the proposition."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/625-german> a schema:CreativeWork ;
@@ -2879,8 +2879,8 @@ etc.) as a projection of a possible situation. The method of projection is to th
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/632> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """Instead of, ‘The complex sign “aRb” says that a stands to b in\r
-the relation R’, we ought to put, ‘That “a” stands to “b” in a certain\r
+    schema:text """Instead of, ‘The complex sign “aRb” says that a stands to b in
+the relation R’, we ought to put, ‘That “a” stands to “b” in a certain
 relation says that aRb.’"""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/633-german> a schema:CreativeWork ;
@@ -3055,18 +3055,18 @@ relation says that aRb.’"""@en .
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/642> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/ogden> ;
-    schema:text """A proposition about a complex stands in internal relation to the proposition about its constituent part. A\r
-complex can only be given by its description, and this will either be\r
-right or wrong. The proposition in which there is mention of a complex,\r
+    schema:text """A proposition about a complex stands in internal relation to the proposition about its constituent part. A
+complex can only be given by its description, and this will either be
+right or wrong. The proposition in which there is mention of a complex,
 if this does not exist, becomes not nonsense but simply false. That a propositional element signifies a complex can be seen from an indeterminateness in the propositions in which it occurs. We know that everything is not yet determined by this proposition. (The notation for generality contains a prototype.) The combination of the symbols of a complex in a simple symbol can be expressed by a definition."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/642-pears> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/642> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """A proposition about a complex stands in an internal relation to a proposition about a constituent of the complex. A complex can be given\r
-only by its description, which will be right or wrong. A proposition\r
-that mentions a complex will not be nonsensical, if the complex does\r
+    schema:text """A proposition about a complex stands in an internal relation to a proposition about a constituent of the complex. A complex can be given
+only by its description, which will be right or wrong. A proposition
+that mentions a complex will not be nonsensical, if the complex does
 not exist, but simply false. When a propositional element signifies a complex, this can be seen from an indeterminateness in the propositions in which it occurs. In such cases we know that the proposition leaves something undetermined. (In fact the notation for generality contains a prototype.) The contraction of a symbol for a complex into a simple symbol can be expressed in a definition."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/643-german> a schema:CreativeWork ;
@@ -5053,21 +5053,21 @@ not exist, but simply false. When a propositional element signifies a complex, t
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/753> ;
     schema:inLanguage "de" ;
     schema:isPartOf id:tractatus ;
-    schema:text """Wollen wir den allgemeinen Satz: „b ist ein Nachfolger von a“ in der Begriffsschrift ausdrücken, so brauchen wir hierzu einen Ausdruck für das allgemeine Glied der Formenreihe:    aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,\r
+    schema:text """Wollen wir den allgemeinen Satz: „b ist ein Nachfolger von a“ in der Begriffsschrift ausdrücken, so brauchen wir hierzu einen Ausdruck für das allgemeine Glied der Formenreihe:    aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,
 …&nbsp; ."""@de .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/753-ogden> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/753> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/ogden> ;
-    schema:text """If we want to express in logical symbolism the general proposition “b is a successor of a” we need for this an expression for the general term of the formal series:    aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,\r
+    schema:text """If we want to express in logical symbolism the general proposition “b is a successor of a” we need for this an expression for the general term of the formal series:    aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,
 …&nbsp; ."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/753-pears> a schema:CreativeWork ;
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/753> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/pears> ;
-    schema:text """If we want to express in conceptual notation the general proposition, ‘b is a successor of a’, then we require an expression for the general term of the series of forms   aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,\r
+    schema:text """If we want to express in conceptual notation the general proposition, ‘b is a successor of a’, then we require an expression for the general term of the series of forms   aRb, (∃ x): aRx . xRb, (∃ x,y): aRx . xRy . yRb,
 …&nbsp; ."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/754-german> a schema:CreativeWork ;
@@ -7294,7 +7294,7 @@ not exist, but simply false. When a propositional element signifies a complex, t
     schema:exampleOfWork <http://wittgensteiniana.michelepasin.org/id/unit/877> ;
     schema:inLanguage "en" ;
     schema:isPartOf <http://wittgensteiniana.michelepasin.org/id/expression/ogden> ;
-    schema:text """Occam’s razor is, of course, not an arbitrary rule nor one justified by its practical success. It simply says that unnecessary elements in a symbolism mean nothing. Signs which serve one purpose are logically equivalent, signs\r
+    schema:text """Occam’s razor is, of course, not an arbitrary rule nor one justified by its practical success. It simply says that unnecessary elements in a symbolism mean nothing. Signs which serve one purpose are logically equivalent, signs
 which serve no purpose are logically meaningless."""@en .
 
 <http://wittgensteiniana.michelepasin.org/id/fragment/877-pears> a schema:CreativeWork ;
@@ -9912,8 +9912,6 @@ which serve no purpose are logically meaningless."""@en .
     schema:description "A proposition is a picture of reality and if it has sense, if it can meaningfully represent reality, it can also have a truth-value depending on whether it represents it truthfully or falsely." ;
     schema:inDefinedTermSet id:topics ;
     schema:name "Truth Value of a Proposition" .
-
-schema:author a owl:DatatypeProperty .
 
 schema:datePublished a owl:DatatypeProperty .
 
