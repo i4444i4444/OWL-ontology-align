@@ -9913,8 +9913,6 @@ which serve no purpose are logically meaningless."""@en .
     schema:inDefinedTermSet id:topics ;
     schema:name "Truth Value of a Proposition" .
 
-schema:author a owl:DatatypeProperty .
-
 schema:datePublished a owl:DatatypeProperty .
 
 schema:description a owl:DatatypeProperty .

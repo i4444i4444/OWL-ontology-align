@@ -1,6 +1,8 @@
 import os
-from rdflib import Graph, URIRef, Literal, BNode
+from rdflib import Graph, URIRef, Literal, BNode, Namespace
 from rdflib.namespace import RDF, OWL
+
+SCHEMA = Namespace("https://schema.org/")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,6 +16,8 @@ predicate_types = {}
 
 for subject, predicate, obj in graph:
     if predicate == RDF.type:
+        continue
+    if predicate == SCHEMA.author:
         continue
 
     if isinstance(obj, Literal):
