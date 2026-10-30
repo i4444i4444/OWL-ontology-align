@@ -120,6 +120,37 @@ for subject, predicate, value in author_triples:
             Literal(author_name)
         ))
 
+object_properties = list(
+    graph.subjects(RDF.type, OWL.ObjectProperty)
+)
+
+for property_uri in object_properties:
+    subjects = list(graph.subjects(property_uri, None))
+
+    for subject in subjects:
+        subject_classes = list(graph.objects(subject, RDF.type))
+
+        for class_uri in subject_classes:
+            if class_uri != OWL.NamedIndividual:
+                graph.add((
+                    property_uri,
+                    RDFS.domain,
+                    class_uri
+                ))
+
+    objects = list(graph.objects(None, property_uri))
+
+    for object_uri in objects:
+        object_classes = list(graph.objects(object_uri, RDF.type))
+
+        for class_uri in object_classes:
+            if class_uri != OWL.NamedIndividual:
+                graph.add((
+                    property_uri,
+                    RDFS.range,
+                    class_uri
+                ))
+            
 graph.serialize(OUTPUT, format="turtle")
 
 print("done")

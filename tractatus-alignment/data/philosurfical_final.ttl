@@ -6,11 +6,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:hasAuthor a owl:ObjectProperty ;
+    rdfs:domain schema:Book ;
     rdfs:range ex:Author .
 
 ex:hasTextFragment a owl:ObjectProperty ;
-    rdfs:domain ex:Thesis ;
-    rdfs:range ex:TextFragment .
+    rdfs:domain ex:Thesis,
+        schema:Chapter ;
+    rdfs:range ex:TextFragment,
+        schema:CreativeWork .
 
 <http://wittgensteiniana.michelepasin.org/id/topic/abstraction-concept-g523200> a schema:DefinedTerm ;
     schema:description "The propositions of mathematics are abstractions, that is, they are fundamentally stating the equivalence of two terms" ;
@@ -432,15 +435,31 @@ schema:datePublished a owl:DatatypeProperty .
 
 schema:description a owl:DatatypeProperty .
 
-schema:exampleOfWork a owl:ObjectProperty .
+schema:exampleOfWork a owl:ObjectProperty ;
+    rdfs:domain ex:TextFragment,
+        schema:CreativeWork ;
+    rdfs:range ex:Thesis,
+        schema:Chapter .
 
-schema:inDefinedTermSet a owl:ObjectProperty .
+schema:inDefinedTermSet a owl:ObjectProperty ;
+    rdfs:domain schema:DefinedTerm ;
+    rdfs:range schema:DefinedTermSet .
 
 schema:inLanguage a owl:DatatypeProperty .
 
-schema:isPartOf a owl:ObjectProperty .
+schema:isPartOf a owl:ObjectProperty ;
+    rdfs:domain ex:TextFragment,
+        ex:Thesis,
+        schema:Chapter,
+        schema:CreativeWork ;
+    rdfs:range ex:Thesis,
+        schema:Book,
+        schema:Chapter .
 
-schema:mentions a owl:ObjectProperty .
+schema:mentions a owl:ObjectProperty ;
+    rdfs:domain ex:Thesis,
+        schema:Chapter ;
+    rdfs:range schema:DefinedTerm .
 
 schema:name a owl:DatatypeProperty .
 
@@ -448,7 +467,9 @@ schema:position a owl:DatatypeProperty .
 
 schema:text a owl:DatatypeProperty .
 
-schema:translationOfWork a owl:ObjectProperty .
+schema:translationOfWork a owl:ObjectProperty ;
+    rdfs:domain schema:Book ;
+    rdfs:range schema:Book .
 
 <http://example.org/philosurfical/author/B_F_McGuinness> a ex:Author ;
     rdfs:label "B.F. McGuinness" .
@@ -11639,8 +11660,6 @@ which serve no purpose are logically meaningless."""@en .
     schema:inDefinedTermSet id:topics ;
     schema:name "Time" .
 
-schema:DefinedTermSet a owl:Class .
-
 <http://wittgensteiniana.michelepasin.org/id/topic/complex-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "The notion of complex (versus simple) is fundamental in Wittgenstein, and in general, in the logical positivism, because these conceptions attempted to reduce the apparent complexity of reality and language into a combination of simple elements." ;
     schema:inDefinedTermSet id:topics ;
@@ -11689,6 +11708,8 @@ schema:DefinedTermSet a owl:Class .
     schema:description "The concept of structure is never used by Wittgenstein per se, but he talks about the 'structure of a state of affairs', the 'logical structure' and the 'possibility of the structure'." ;
     schema:inDefinedTermSet id:topics ;
     schema:name "Structure" .
+
+schema:DefinedTermSet a owl:Class .
 
 <http://wittgensteiniana.michelepasin.org/id/topic/action-concept-g605281> a schema:DefinedTerm ;
     schema:description "With this term we refer to the human capability of acting" ;
@@ -15693,8 +15714,6 @@ schema:DefinedTermSet a owl:Class .
     schema:name "6.2331" ;
     schema:position 472 .
 
-schema:Book a owl:Class .
-
 <http://wittgensteiniana.michelepasin.org/id/topic/form-of-representation-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "The form of representation is the 'code' used to express the correspondance between a picture and what the picture represents. For example, says Wittgenstein, between a proposition and a fact the form of representation is given by the logical form, which guarantees the correspondance between the elements of the pictures and the elements of the fact." ;
     schema:inDefinedTermSet id:topics ;
@@ -17245,6 +17264,8 @@ ex:Author a owl:Class .
     schema:name "6.23" ;
     schema:position 465 .
 
+schema:Book a owl:Class .
+
 <http://wittgensteiniana.michelepasin.org/id/topic/analysis-of-a-proposition-by-wittgenstein> a schema:DefinedTerm ;
     schema:description "Frege and Russell recognized that the subject-predicate form of grammar masks the underlying logical form of a proposition. Consequently, they analyzed sentences in order to reduce them into sets of functions and variable placeholders, making possible things such as quantifier logic. Wittgenstein shares the view that ordinary language masks the real logical structure it has, so he too advocates the usage of analysis for breaking down complex propositions into simple one. However, he also rejects several other solutions proposed by Russell and Frege (like the Theory of types, or the existence of logical objects) by proposing his pictorial theory of language and meaning." ;
     schema:inDefinedTermSet id:topics ;
@@ -17882,9 +17903,9 @@ schema:DefinedTerm a owl:Class .
     schema:name "Tractatus Logico-Philosophicus (tr. Pears & McGuinness)" ;
     schema:translationOfWork id:tractatus .
 
-schema:Chapter a owl:Class .
-
 ex:Thesis a owl:Class .
+
+schema:Chapter a owl:Class .
 
 id:tractatus a schema:Book ;
     ex:hasAuthor <http://example.org/philosurfical/author/Ludwig_Wittgenstein> ;
@@ -17892,7 +17913,7 @@ id:tractatus a schema:Book ;
     schema:inLanguage "de" ;
     schema:name "Tractatus Logico-Philosophicus" .
 
-schema:CreativeWork a owl:Class .
-
 ex:TextFragment a owl:Class .
+
+schema:CreativeWork a owl:Class .
 
