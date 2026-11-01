@@ -1,12 +1,12 @@
 # OWL Ontology Alignment
 
-This project focuses on the **semantic alignment of the PhiloSURFical and WAB ontologies**, which represent knowledge related to Tractatus Logico Philosophicus by Ludwig Wittgenstein.
+This project focuses on the **semantic alignment of the Wittgensteiniana and WAB ontologies**, which represent knowledge related to Tractatus Logico Philosophicus by Ludwig Wittgenstein.
 
 The main objective is to identify semantic correspondences between entities in the two ontologies, analyze the results of ontology matching, and investigate how different knowledge representation models can be aligned.
 
 ## Objectives
 
-- Analyze the structure and content of the PhiloSURFical and WAB ontologies.
+- Analyze the structure and content of the Wittgensteiniana and WAB ontologies.
 - Apply ontology matching methods to discover semantic correspondences.
 - Explore the use of OntoAligner for ontology alignment.
 - Evaluate and interpret the resulting mappings.
@@ -14,9 +14,9 @@ The main objective is to identify semantic correspondences between entities in t
 
 ## Ontologies
 
-### PhiloSURFical
+### Wittgensteiniana
 
-The project uses the part of the PhiloSURFical ontology related to Ludwig Wittgenstein's Tractatus Logico-Philosophicus. It provides a representation of philosophical concepts and textual resources associated with the work.
+Wittgensteiniana uses RDF to describe Ludwig Wittgenstein's Tractatus Logico-Philosophicus. It provides a representation of philosophical concepts and textual resources associated with the work.
 
 ### WAB (Wittgenstein Archives at the University of Bergen)
 
