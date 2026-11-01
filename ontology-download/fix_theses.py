@@ -6,17 +6,23 @@ from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import OWL, RDF, RDFS, XSD
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(BASE_DIR)
 
-SOURCE = os.path.join(BASE_DIR, "philosurfical_modified.ttl")
-OUTPUT = os.path.join(
-    BASE_DIR, "tractatus-alignment", "data", "philosurfical_final.ttl"
+SOURCE = os.path.join(BASE_DIR, "wittgensteiniana_modified.ttl")
+
+OUTPUT_DIR = os.path.join(
+    PROJECT_DIR, "tractatus-alignment", "data"
 )
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+OUTPUT = os.path.join(OUTPUT_DIR, "wittgensteiniana_final.ttl")
 
 graph = Graph()
 graph.parse(SOURCE, format="turtle")
 
 SCHEMA = Namespace("https://schema.org/")
-EX = Namespace("http://example.org/philosurfical/")
+EX = Namespace("http://example.org/wittgensteiniana/")
 
 graph.bind("ex", EX)
 graph.bind("schema", SCHEMA)
