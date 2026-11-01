@@ -49,5 +49,6 @@ The project is currently in the ontology inspection and preparation stage. The n
 
 ## Sources
 
-- [PhiloSURFical](https://philosurfical.open.ac.uk/)
 - [Wittgenstein Archives at the University of Bergen](https://wab.uib.no/)
+- [Wittgensteiniana RDF dataset](https://github.com/lambdamusic/wittgensteiniana/blob/main/backups/rdf/wittgensteiniana.ttl) — RDF data used as a source for the analysis.
+- [Wittgensteiniana repository](https://github.com/lambdamusic/wittgensteiniana) — original project and additional information.
