@@ -1,13 +1,14 @@
 import os
-from rdflib import Graph, URIRef, Literal, BNode, Namespace
-from rdflib.namespace import RDF, OWL
+
+from rdflib import BNode, Graph, Literal, Namespace, URIRef
+from rdflib.namespace import OWL, RDF
 
 SCHEMA = Namespace("https://schema.org/")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-SOURCE = os.path.join(BASE_DIR, "philosurfical.ttl")
-OUTPUT = os.path.join(BASE_DIR, "philosurfical_modified.ttl")
+SOURCE = os.path.join(BASE_DIR, "wittgensteiniana.ttl")
+OUTPUT = os.path.join(BASE_DIR, "wittgensteiniana_modified.ttl")
 
 graph = Graph()
 graph.parse(SOURCE, format="turtle")
