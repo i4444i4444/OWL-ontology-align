@@ -3,9 +3,7 @@ from pathlib import Path
 from rdflib import OWL, RDF, RDFS, BNode, Graph, Namespace, URIRef
 from rdflib.namespace import XSD
 
-# ---------------------------------------------------------------------------
 # Configuration
-# ---------------------------------------------------------------------------
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 ONTOLOGY_PATH = BASE_DIR / "data" / "wittgenstein.owl"
@@ -14,9 +12,7 @@ OUTPUT_PATH = BASE_DIR / "data" / "wab_tractatus_subgraph.ttl"
 WAB = Namespace("http://purl.org/wittgensteinsource/ont/")
 INSTANCES = Namespace("http://purl.org/wittgensteinsource/ont/instances/")
 
-# ---------------------------------------------------------------------------
 # Load source
-# ---------------------------------------------------------------------------
 
 print(f"Loading: {ONTOLOGY_PATH}")
 source = Graph()
@@ -31,9 +27,7 @@ target.bind("rdfs", RDFS)
 target.bind("owl", OWL)
 target.bind("xsd", XSD)
 
-# ---------------------------------------------------------------------------
 # SPARQL queries
-# ---------------------------------------------------------------------------
 
 # 1. Everything directly attached to W-TLP
 Q1 = """
