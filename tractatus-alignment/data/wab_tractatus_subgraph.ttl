@@ -33,6 +33,31 @@ wab:Werk a rdfs:Class ;
         """^^xsd:string ;
     rdfs:subClassOf wab:WittgensteinSource .
 
+wab:WittgensteinExternalSource a rdfs:Class ;
+    rdfs:label "WittgensteinExternalSource"^^xsd:string ;
+    rdfs:comment """External primary source, subclass of Primary source: A primary source for
+            Wittgenstein scholarship, not authored or co-authored by Wittgenstein, but referred to
+            in a Wittgenstein primary source. Example of instance: Goethe's Faust; Augustine's 
+            Confessiones """^^xsd:string ;
+    rdfs:subClassOf ns1:PrimarySource .
+
+wab:WittgensteinSource a rdfs:Class ;
+    rdfs:label "WittgensteinSource"^^xsd:string ;
+    rdfs:comment """Wittgenstein primary source, subclass of Primary source: A primary source for
+            Wittgenstein scholarship, authored or co-authored by Wittgenstein."""^^xsd:string ;
+    rdfs:subClassOf ns1:PrimarySource .
+
+ns1:PrimarySource a rdfs:Class ;
+    rdfs:label "Primary Source"^^xsd:string ;
+    rdfs:comment """Primary Source: A primary source for Wittgenstein scholarship, authored or
+            co-authored by Wittgenstein, or if not by Wittgenstein, referred to by
+            Wittgenstein."""^^xsd:string ;
+    rdfs:subClassOf ns1:Source .
+
+ns1:Source a rdfs:Class ;
+    rdfs:label "Source"^^xsd:string ;
+    rdfs:comment "Source: A primary or secondary source."^^xsd:string .
+
 wab:contains a owl:ObjectProperty ;
     rdfs:label "contains"^^xsd:string ;
     rdfs:domain wab:WittgensteinSource ;
@@ -1692,12 +1717,14 @@ inst:Ernst__Paul__Nachwort_zu_Kinder-_und_Hausm%C3%A4rchen a wab:WittgensteinExt
     rdfs:label "Ernst, Paul: Nachwort zu Kinder- und Hausmärchen" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B4%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2CIr%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2CIIr%5B4%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2CIIr%5B4%5D_d> ;
+    ns1:hasAuthor inst:Ernst__Paul .
 
 inst:Frege__Gottlob__%5Bwritings%5D a wab:WittgensteinExternalSource ;
     rdfs:label "Frege, Gottlob: [writings]" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C33r%5B9%5Det34r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C33r%5B9%5Det34r%5B1%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C33r%5B9%5Det34r%5B1%5D_d> ;
+    ns1:hasAuthor inst:Frege__Gottlob .
 
 inst:Frege__Gottlob__%C3%9Cber_Sinn_und_Bedeutung a wab:WittgensteinExternalSource ;
     rdfs:label "Frege, Gottlob: Über Sinn und Bedeutung" ;
@@ -1716,7 +1743,8 @@ inst:Frege__Gottlob__%C3%9Cber_Sinn_und_Bedeutung a wab:WittgensteinExternalSour
         <http://wittgensteinsource.org/Ts-204%2C24r%5B8%5Det25r%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C46r%5B10%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C6r%5B7%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C8r%5B4%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C8r%5B4%5D_d> ;
+    ns1:hasAuthor inst:Frege__Gottlob .
 
 inst:Frege__Gottlob__Begriffsschrift a wab:WittgensteinExternalSource ;
     rdfs:label "Frege, Gottlob: Begriffsschrift" ;
@@ -1731,7 +1759,8 @@ inst:Frege__Gottlob__Begriffsschrift a wab:WittgensteinExternalSource ;
         <http://wittgensteinsource.org/Ts-204%2C19ar%5B5%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C21r%5B6%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C21r%5B9%5Det22r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C30r%5B9%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C30r%5B9%5D_d> ;
+    ns1:hasAuthor inst:Frege__Gottlob .
 
 inst:Frege__Gottlob__Grundgesetze_der_Arithmetik a wab:WittgensteinExternalSource ;
     rdfs:label "Frege, Gottlob: Grundgesetze der Arithmetik" ;
@@ -1747,13 +1776,15 @@ inst:Frege__Gottlob__Grundgesetze_der_Arithmetik a wab:WittgensteinExternalSourc
         <http://wittgensteinsource.org/Ts-204%2C26r%5B6%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C30r%5B7%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C31r%5B6%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C46r%5B2%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C46r%5B2%5D_d> ;
+    ns1:hasAuthor inst:Frege__Gottlob .
 
 inst:Grimm__Jacob__Grimm__Wilhelm__Die_Goldkinder a wab:WittgensteinExternalSource ;
     rdfs:label "Grimm, Jacob; Grimm, Wilhelm: Die Goldkinder" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C12r%5B4%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C14r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C12r%5B4%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C12r%5B4%5D_d> ;
+    ns1:hasAuthor inst:Grimm__Jacob%3B_Grimm__Wilhelm .
 
 inst:Hertz__Heinrich__Prinzipien_der_Mechanik_in_neuem_Zusammenhange_dargestellt a wab:WittgensteinExternalSource ;
     rdfs:label "Hertz, Heinrich: Prinzipien der Mechanik in neuem Zusammenhange dargestellt" ;
@@ -1762,19 +1793,22 @@ inst:Hertz__Heinrich__Prinzipien_der_Mechanik_in_neuem_Zusammenhange_dargestellt
         <http://wittgensteinsource.org/Ts-203%2C15r%5B9%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C53r%5B5%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C13r%5B10%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C49r%5B7%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C49r%5B7%5D_d> ;
+    ns1:hasAuthor inst:Hertz__Heinrich .
 
 inst:K%C3%BCrnberger__Ferdinand__Literarische_Herzenssachen a wab:WittgensteinExternalSource ;
     rdfs:label "Kürnberger, Ferdinand: Literarische Herzenssachen" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2CIr%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2CIIr%5B1%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2CIIr%5B1%5D_d> ;
+    ns1:hasAuthor inst:K%C3%BCrnberger__Ferdinand .
 
 inst:Kant__Immanuel__Prolegomena a wab:WittgensteinExternalSource ;
     rdfs:label "Kant, Immanuel: Prolegomena" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C50r%5B2%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C53r%5B7%5Det54r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C50r%5B2%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C50r%5B2%5D_d> ;
+    ns1:hasAuthor inst:Kant__Immanuel .
 
 inst:Mauthner__Fritz a ns1:Person ;
     rdfs:label "Mauthner, Fritz" ;
@@ -1801,7 +1835,8 @@ inst:Ockham__Wilhelm_von__%5BOccam%27s_razor%5D a wab:WittgensteinExternalSource
         <http://wittgensteinsource.org/Ts-203%2C36r%5B10%5Det37r%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C10r%5B3%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C32r%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C33r%5B8%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C33r%5B8%5D_d> ;
+    ns1:hasAuthor inst:Ockham__Wilhelm_von .
 
 inst:Pinsent__David_Hume a ns1:Person ;
     rdfs:label "Pinsent, David Hume" ;
@@ -1811,14 +1846,16 @@ inst:Pinsent__David_Hume a ns1:Person ;
 inst:Russell__Bertrand__The_Principles_of_Mathematics a wab:WittgensteinExternalSource ;
     rdfs:label "Russell, Bertrand: The Principles of Mathematics" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C38r%5B2%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C38r%5B2%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C38r%5B2%5D_d> ;
+    ns1:hasAuthor inst:Russell__Bertrand .
 
 inst:Russell__Bertrand__Whitehead__Alfred_North__Principia_Mathematica a wab:WittgensteinExternalSource ;
     rdfs:label "Russell, Bertrand; Whitehead, Alfred North: Principia Mathematica" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C32r%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C35r%5B2%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C41r%5B8%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C32r%5B1%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C32r%5B1%5D_d> ;
+    ns1:hasAuthor inst:Russell__Bertrand%3B_Whitehead__Alfred_North .
 
 inst:Sokrates a ns1:Person ;
     rdfs:label "Sokrates" ;
@@ -1833,7 +1870,8 @@ inst:Spinoza__Baruch_de__Ethica__ordine_geometrico_demonstrata a wab:Wittgenstei
     rdfs:label "Spinoza, Baruch de: Ethica, ordine geometrico demonstrata" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C52r%5B8%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C56r%5B7%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C52r%5B10%5D_d> .
+        <http://wittgensteinsource.org/Ts-204%2C52r%5B10%5D_d> ;
+    ns1:hasAuthor inst:Spinoza__Baruch_de .
 
 inst:W-Ts-202 a wab:TS ;
     rdfs:label "W-Ts-202" ;
@@ -3553,41 +3591,11 @@ inst:W-TLP%3A%206.1203 a wab:Part ;
 wab:p a ns1:TextSubGenre ;
     rdfs:label "Notation [not defined]"^^xsd:string .
 
-inst:Ernst__Paul a ns1:Person ;
-    rdfs:label "Ernst, Paul" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2CIr%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2CIIr%5B4%5D_d> .
-
-inst:Grimm__Jacob%3B_Grimm__Wilhelm a ns1:Person ;
-    rdfs:label "Grimm, Jacob; Grimm, Wilhelm" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C12r%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C14r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C12r%5B4%5D_d> .
-
-inst:K%C3%BCrnberger__Ferdinand a ns1:Person ;
-    rdfs:label "Kürnberger, Ferdinand" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2CIr%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2CIIr%5B1%5D_d> .
-
-inst:Kant__Immanuel a ns1:Person ;
-    rdfs:label "Kant, Immanuel" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C50r%5B2%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C53r%5B7%5Det54r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C50r%5B2%5D_d> .
-
 inst:Moore__George_Edward a ns1:Person ;
     rdfs:label "Moore, George Edward" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C38r%5B5%5D_d>,
         <http://wittgensteinsource.org/Ts-203%2C42r%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C38r%5B5%5D_d> .
-
-inst:Spinoza__Baruch_de a ns1:Person ;
-    rdfs:label "Spinoza, Baruch de" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C52r%5B8%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C56r%5B7%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C52r%5B10%5D_d> .
 
 inst:W-TLP%3A%202.132 a wab:Part ;
     rdfs:label "Tractatus logico-philosophicus (TLP, 1922 et 1933) 2.132" ;
@@ -4099,12 +4107,35 @@ inst:W-TLP%3A%207 a wab:Part ;
     wab:madeBefore "1918-08-31"^^xsd:date ;
     ns1:hasAuthor inst:Wittgenstein__Ludwig .
 
-inst:Russell__Bertrand%3B_Whitehead__Alfred_North a ns1:Person ;
-    rdfs:label "Russell, Bertrand; Whitehead, Alfred North" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C32r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C35r%5B2%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C41r%5B8%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C32r%5B1%5D_d> .
+inst:Ernst__Paul a ns1:Person ;
+    rdfs:label "Ernst, Paul" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B4%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2CIr%5B4%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2CIIr%5B4%5D_d> .
+
+inst:Grimm__Jacob%3B_Grimm__Wilhelm a ns1:Person ;
+    rdfs:label "Grimm, Jacob; Grimm, Wilhelm" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C12r%5B4%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C14r%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C12r%5B4%5D_d> .
+
+inst:K%C3%BCrnberger__Ferdinand a ns1:Person ;
+    rdfs:label "Kürnberger, Ferdinand" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2CIr%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2CIr%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2CIIr%5B1%5D_d> .
+
+inst:Kant__Immanuel a ns1:Person ;
+    rdfs:label "Kant, Immanuel" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C50r%5B2%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C53r%5B7%5Det54r%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C50r%5B2%5D_d> .
+
+inst:Spinoza__Baruch_de a ns1:Person ;
+    rdfs:label "Spinoza, Baruch de" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C52r%5B8%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C56r%5B7%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C52r%5B10%5D_d> .
 
 inst:W-TLP%3A%201 a wab:Part ;
     rdfs:label "Tractatus logico-philosophicus (TLP, 1922 et 1933) 1" ;
@@ -24878,6 +24909,13 @@ inst:W-TLP%3A%206.521 a wab:Part ;
     wab:madeBefore "1918-08-31"^^xsd:date ;
     ns1:hasAuthor inst:Wittgenstein__Ludwig .
 
+inst:Russell__Bertrand%3B_Whitehead__Alfred_North a ns1:Person ;
+    rdfs:label "Russell, Bertrand; Whitehead, Alfred North" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C32r%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C35r%5B2%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C41r%5B8%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C32r%5B1%5D_d> .
+
 inst:W-TLP%3A%206 a wab:Part ;
     rdfs:label "Tractatus logico-philosophicus (TLP, 1922 et 1933) 6" ;
     wab:isPartOf inst:W-TLP ;
@@ -25733,15 +25771,6 @@ inst:W-TLP%3A%206.1 a wab:Part ;
     wab:madeAfter "1918-07-01"^^xsd:date ;
     wab:madeBefore "1918-08-31"^^xsd:date ;
     ns1:hasAuthor inst:Wittgenstein__Ludwig .
-
-inst:Hertz__Heinrich a ns1:Person ;
-    rdfs:label "Hertz, Heinrich" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C13r%5B10%5D_d>,
-        <http://wittgensteinsource.org/Ts-202%2C49r%5B7%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C15r%5B9%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C53r%5B5%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C13r%5B10%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C49r%5B7%5D_d> .
 
 <http://wittgensteinsource.org/Ts-202%2C10r%5B3%5D_d> a wab:Bemerkung,
         wab:TS ;
@@ -26732,6 +26761,15 @@ inst:Hertz__Heinrich a ns1:Person ;
     wab:refersTo inst:Russell__Bertrand ;
     ns1:hasAuthor inst:Wittgenstein__Ludwig .
 
+inst:Hertz__Heinrich a ns1:Person ;
+    rdfs:label "Hertz, Heinrich" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C13r%5B10%5D_d>,
+        <http://wittgensteinsource.org/Ts-202%2C49r%5B7%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C15r%5B9%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C53r%5B5%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C13r%5B10%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C49r%5B7%5D_d> .
+
 <http://wittgensteinsource.org/Ts-202%2C21r%5B9%5Det22r%5B1%5D_d> a wab:Bemerkung,
         wab:TS ;
     rdfs:label "Ts-202,21r[9]et22r[1]" ;
@@ -27094,18 +27132,6 @@ wab:graphicnotation a ns1:TextSubGenre ;
         inst:Whitehead__Alfred_North ;
     ns1:hasAuthor inst:Wittgenstein__Ludwig .
 
-inst:Ockham__Wilhelm_von a ns1:Person ;
-    rdfs:label "Ockham, Wilhelm von" ;
-    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C10r%5B3%5D_d>,
-        <http://wittgensteinsource.org/Ts-202%2C32r%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-202%2C33r%5B8%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C10r%5B6%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C35r%5B5%5D_d>,
-        <http://wittgensteinsource.org/Ts-203%2C36r%5B10%5Det37r%5B1%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C10r%5B3%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C32r%5B4%5D_d>,
-        <http://wittgensteinsource.org/Ts-204%2C33r%5B8%5D_d> .
-
 inst:Whitehead__Alfred_North a ns1:Person ;
     rdfs:label "Whitehead, Alfred North" ;
     wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C29r%5B8%5D_d>,
@@ -27117,6 +27143,18 @@ inst:Whitehead__Alfred_North a ns1:Person ;
         <http://wittgensteinsource.org/Ts-204%2C29r%5B8%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C32r%5B1%5D_d>,
         <http://wittgensteinsource.org/Ts-204%2C47r%5B7%5D_d> .
+
+inst:Ockham__Wilhelm_von a ns1:Person ;
+    rdfs:label "Ockham, Wilhelm von" ;
+    wab:isReferredToIn <http://wittgensteinsource.org/Ts-202%2C10r%5B3%5D_d>,
+        <http://wittgensteinsource.org/Ts-202%2C32r%5B4%5D_d>,
+        <http://wittgensteinsource.org/Ts-202%2C33r%5B8%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C10r%5B6%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C35r%5B5%5D_d>,
+        <http://wittgensteinsource.org/Ts-203%2C36r%5B10%5Det37r%5B1%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C10r%5B3%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C32r%5B4%5D_d>,
+        <http://wittgensteinsource.org/Ts-204%2C33r%5B8%5D_d> .
 
 wab:preface a ns1:TextSubGenre ;
     rdfs:label "Preface (parts)"^^xsd:string .
